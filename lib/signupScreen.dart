@@ -60,7 +60,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     : null,
               ),
               subtitle: Text(
-                'English (India)',
+                'Spanish (India)',
                 style:
                     TextStyle(fontFamily: 'krub', fontWeight: FontWeight.w400),
               ),

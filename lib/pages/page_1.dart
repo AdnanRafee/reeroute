@@ -11,7 +11,8 @@ class _Page1State extends State<Page1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(child: Image.asset('assets/delivery-truck_left.png')),
+      body: Container(
+          child: Image.asset('assets/images/delivery-truck_left.png')),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 import 'package:reeroute/noInternetScreen.dart';
@@ -24,7 +25,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         automaticallyImplyLeading: false,
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: Image.asset('assets/frame.png'),
+        title: SvgPicture.asset('assets/images/headerIcon.svg'),
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(

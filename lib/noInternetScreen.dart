@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 class NoInternetScreen extends StatelessWidget {
@@ -11,7 +12,7 @@ class NoInternetScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: Image.asset('assets/frame.png'),
+        title: SvgPicture.asset('assets/images/headerIcon.svg'),
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(
@@ -32,7 +33,7 @@ class NoInternetScreen extends StatelessWidget {
             SizedBox(
               height: 120,
             ),
-            Image.asset('assets/Connection_illustration.png'),
+            Image.asset('assets/images/Connection_illustration.png'),
             SizedBox(
               height: 100,
             ),

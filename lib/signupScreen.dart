@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import 'welcomeScreen.dart';
@@ -20,7 +20,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        title: Image.asset('assets/frame.png'),
+        title: SvgPicture.asset('assets/images/headerIcon.svg'),
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(

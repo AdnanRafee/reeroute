@@ -12,7 +12,7 @@ class _Page3State extends State<Page3> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Image.asset('assets/delivery-truck-clock.png'),
+        child: Image.asset('assets/images/delivery-truck-clock.png'),
       ),
     );
   }

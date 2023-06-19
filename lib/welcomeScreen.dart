@@ -25,7 +25,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         automaticallyImplyLeading: false,
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: SvgPicture.asset('assets/images/headerIcon.svg'),
+        title: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 12),
+          child: SvgPicture.asset('assets/images/headerIcon.svg'),
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(

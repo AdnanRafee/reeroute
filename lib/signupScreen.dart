@@ -20,11 +20,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        title: SvgPicture.asset('assets/images/headerIcon.svg'),
+        title: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 12),
+          child: SvgPicture.asset(
+            'assets/images/headerIcon.svg',
+            width: 170,
+          ),
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(
-            35, MediaQuery.of(context).size.height * 0.06, 35, 0),
+            28, MediaQuery.of(context).size.height * 0.06, 35, 0),
         child: Column(
           children: [
             Text(

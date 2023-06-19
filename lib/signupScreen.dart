@@ -12,7 +12,7 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  int selectedLanguageIndex = -1;
+  int selectedLanguageIndex = 0;
 
   @override
   Widget build(BuildContext context) {

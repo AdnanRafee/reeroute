@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-import 'package:reeroute/noInternetScreen.dart';
 import 'package:reeroute/pages/page_1.dart';
 import 'package:reeroute/pages/page_2.dart';
 import 'package:reeroute/pages/page_3.dart';
+import 'package:reeroute/signUpWithMobile.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -110,7 +110,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => NoInternetScreen()));
+                              builder: (context) => SignUpWithMobile()));
                     },
                     child: Text(
                       'Start'.tr,

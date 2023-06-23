@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
+import 'appBarReeroute.dart';
 import 'welcomeScreen.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -17,17 +17,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-        title: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12),
-          child: SvgPicture.asset(
-            'assets/images/headerIcon.svg',
-            width: 170,
-          ),
-        ),
-      ),
+      appBar: AppBarReeroute(),
       body: Padding(
         padding: EdgeInsets.fromLTRB(
             28, MediaQuery.of(context).size.height * 0.06, 35, 0),
@@ -129,7 +119,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         backgroundColor:
                             MaterialStatePropertyAll(Color(0xffF79633)),
                         shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16)))),
+                            borderRadius: BorderRadius.circular(12)))),
                     onPressed: () {
                       if (selectedLanguageIndex == 1) {
                         var locale = Locale('hi', 'IN');

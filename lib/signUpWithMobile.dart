@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:reeroute/noInternetScreen.dart';
+import 'package:reeroute/otpScreen.dart';
 
 class SignUpWithMobile extends StatefulWidget {
   const SignUpWithMobile({Key? key}) : super(key: key);
@@ -157,12 +157,10 @@ class _SignUpWithMobileState extends State<SignUpWithMobile> {
                     backgroundColor:
                         MaterialStatePropertyAll(Color(0xffF79633)),
                     shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16)))),
+                        borderRadius: BorderRadius.circular(12)))),
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => NoInternetScreen()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => OtpScreen()));
                 },
                 child: Text('Continue'.tr),
               ),

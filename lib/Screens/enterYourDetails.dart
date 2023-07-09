@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'noInternetScreen.dart';
+import 'package:reeroute/Screens/completeKyc.dart';
 
-import 'appBarReeroute.dart';
+import '../common/appBarReeroute.dart';
 
 class EnterYourDetails extends StatefulWidget {
   const EnterYourDetails({Key? key}) : super(key: key);
@@ -13,7 +13,7 @@ class EnterYourDetails extends StatefulWidget {
 
 class _EnterYourDetailsState extends State<EnterYourDetails> {
   late String valueChoose;
-  List<String> cities = ['Mumbai', 'Chennai', 'Pune'];
+  List<String> cities = ['Mumbai'.tr, 'Chennai'.tr, 'Pune'.tr];
 
   String? dropdownvalue = null;
 
@@ -28,7 +28,7 @@ class _EnterYourDetailsState extends State<EnterYourDetails> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Enter your details',
+                Text('Enter your details'.tr,
                     style: TextStyle(
                         fontFamily: 'rubik',
                         fontSize: 18,
@@ -36,7 +36,7 @@ class _EnterYourDetailsState extends State<EnterYourDetails> {
                 SizedBox(
                   height: 48,
                 ),
-                Text('Full Name*',
+                Text('Full Name*'.tr,
                     style: TextStyle(
                         fontFamily: 'rubik',
                         fontSize: 18,
@@ -56,7 +56,7 @@ class _EnterYourDetailsState extends State<EnterYourDetails> {
                       // showCursor: false,
                       decoration: InputDecoration(
                         floatingLabelBehavior: FloatingLabelBehavior.never,
-                        labelText: 'Enter your full name',
+                        labelText: 'Enter your full name'.tr,
                         labelStyle: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 18,
@@ -73,7 +73,7 @@ class _EnterYourDetailsState extends State<EnterYourDetails> {
                 SizedBox(
                   height: 25,
                 ),
-                Text('Email Address',
+                Text('Email Address'.tr,
                     style: TextStyle(
                         fontFamily: 'rubik',
                         fontSize: 18,
@@ -93,7 +93,7 @@ class _EnterYourDetailsState extends State<EnterYourDetails> {
                       // showCursor: false,
                       decoration: InputDecoration(
                         floatingLabelBehavior: FloatingLabelBehavior.never,
-                        labelText: 'Enter your email address',
+                        labelText: 'Enter your email address'.tr,
                         labelStyle: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 18,
@@ -110,7 +110,7 @@ class _EnterYourDetailsState extends State<EnterYourDetails> {
                 SizedBox(
                   height: 25,
                 ),
-                Text('Current City',
+                Text('Current City'.tr,
                     style: TextStyle(
                         fontFamily: 'rubik',
                         fontSize: 18,
@@ -133,7 +133,7 @@ class _EnterYourDetailsState extends State<EnterYourDetails> {
                         isExpanded: true,
                         borderRadius: BorderRadius.circular(10),
                         hint: Text(
-                          'Select your current city',
+                          'Select your current city'.tr,
                           style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 18,
@@ -177,7 +177,7 @@ class _EnterYourDetailsState extends State<EnterYourDetails> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => NoInternetScreen()));
+                                  builder: (context) => CompleteKyc()));
                         },
                         child: Text(
                           'Continue'.tr,

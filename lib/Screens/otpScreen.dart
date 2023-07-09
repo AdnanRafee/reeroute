@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 import 'package:otp_text_field/otp_text_field.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
-import 'package:reeroute/enterYourDetails.dart';
+import 'package:reeroute/Screens/enterYourDetails.dart';
 
-import 'appBarReeroute.dart';
+import '../common/appBarReeroute.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({Key? key}) : super(key: key);
@@ -73,7 +73,7 @@ class _OtpScreenState extends State<OtpScreen> {
                                           BorderRadius.circular(12)))),
                           onPressed: () {},
                           child: Text(
-                            'Resend',
+                            'Resend'.tr,
                             style: TextStyle(
                                 color: Color(0xffF79633),
                                 fontFamily: 'inter',
@@ -101,14 +101,14 @@ class _OtpScreenState extends State<OtpScreen> {
                                     builder: (context) => EnterYourDetails()));
                           },
                           child: Text(
-                            'Continue',
+                            'Continue'.tr,
                             style: TextStyle(fontFamily: 'inter', fontSize: 18),
                           )),
                     ))
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

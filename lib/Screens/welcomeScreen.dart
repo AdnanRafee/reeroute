@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 import 'package:reeroute/pages/page_1.dart';
 import 'package:reeroute/pages/page_2.dart';
 import 'package:reeroute/pages/page_3.dart';
-import 'package:reeroute/signUpWithMobile.dart';
+import 'package:reeroute/Screens/signUpWithMobile.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import 'appBarReeroute.dart';
+import '../common/appBarReeroute.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -28,7 +28,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         padding: EdgeInsets.fromLTRB(
             35, MediaQuery.of(context).size.height * 0.06, 35, 0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Center(
               child: Text(
@@ -43,17 +42,20 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             SizedBox(
               height: 80,
             ),
-            SizedBox(
-              height: 409,
-              width: MediaQuery.of(context).size.width,
-              child: PageView(
-                controller: _controller,
-                onPageChanged: (index) {
-                  setState(() {
-                    onLastPage = (index == 2);
-                  });
-                },
-                children: [Page1(), Page2(), Page3()],
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 0),
+              child: SizedBox(
+                height: 409,
+                width: MediaQuery.of(context).size.width,
+                child: PageView(
+                  controller: _controller,
+                  onPageChanged: (index) {
+                    setState(() {
+                      onLastPage = (index == 2);
+                    });
+                  },
+                  children: [Page1(), Page2(), Page3()],
+                ),
               ),
             ),
             SizedBox(

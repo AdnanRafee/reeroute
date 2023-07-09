@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'appBarReeroute.dart';
+import '../common/appBarReeroute.dart';
 import 'welcomeScreen.dart';
 
 class SignUpScreen extends StatefulWidget {

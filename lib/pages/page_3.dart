@@ -14,7 +14,10 @@ class _Page3State extends State<Page3> {
     return Scaffold(
       body: Column(children: [
         Container(
-          child: Image.asset('assets/images/delivery-truck-clock.png'),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 50),
+            child: Image.asset('assets/images/delivery-truck-clock.png'),
+          ),
         ),
         SizedBox(
           height: 40,
@@ -31,7 +34,7 @@ class _Page3State extends State<Page3> {
           height: 10,
         ),
         Text(
-          'Lorem3 Ipsum3 is simply dummy text of the printing and typesetting industry'
+          'Random is simply dummy text of the printing and typesetting industry'
               .tr,
           textAlign: TextAlign.center,
           style: TextStyle(

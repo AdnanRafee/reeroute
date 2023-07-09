@@ -13,8 +13,11 @@ class _Page2State extends State<Page2> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(children: [
-        Container(
-          child: Image.asset('assets/images/delivery-truck.png'),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 45),
+          child: Container(
+            child: Image.asset('assets/images/delivery-truck.png'),
+          ),
         ),
         SizedBox(
           height: 40,
@@ -31,7 +34,7 @@ class _Page2State extends State<Page2> {
           height: 10,
         ),
         Text(
-          'Lorem2 Ipsum2 is simply dummy text of the printing and typesetting industry'
+          'Random is simply dummy text of the printing and typesetting industry'
               .tr,
           textAlign: TextAlign.center,
           style: TextStyle(

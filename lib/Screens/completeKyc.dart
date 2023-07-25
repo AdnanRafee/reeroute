@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:reeroute/Screens/panCardKyc.dart';
+import 'package:reeroute/common/bottomNavigation.dart';
 
 class CompleteKyc extends StatefulWidget {
   const CompleteKyc({Key? key}) : super(key: key);
@@ -137,7 +138,10 @@ class _CompleteKycState extends State<CompleteKyc> {
                 ),
                 InkWell(
                   onTap: () {
-                    print('do this later working');
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => BottomNavigation()));
                   },
                   child: Center(
                       child: Text(

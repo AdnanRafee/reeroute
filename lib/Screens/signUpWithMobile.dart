@@ -162,7 +162,11 @@ class _SignUpWithMobileState extends State<SignUpWithMobile> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => OtpScreen()));
                 },
-                child: Text('Continue'.tr),
+                child: Text('Continue'.tr,
+                    style: TextStyle(
+                        fontFamily: 'inter',
+                        fontSize: 18,
+                        fontWeight: FontWeight.w400)),
               ),
             )
           ],

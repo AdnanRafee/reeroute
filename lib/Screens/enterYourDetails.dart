@@ -15,7 +15,7 @@ class _EnterYourDetailsState extends State<EnterYourDetails> {
   late String valueChoose;
   List<String> cities = ['Mumbai'.tr, 'Chennai'.tr, 'Pune'.tr];
 
-  String? dropdownvalue = null;
+  String? dropdownvalue;
 
   @override
   Widget build(BuildContext context) {

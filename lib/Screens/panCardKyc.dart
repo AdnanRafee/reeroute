@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:reeroute/common/appBarReeroute.dart';
-import 'package:reeroute/common/bottomNavigation.dart';
 
 import '../util/colors.dart';
+import 'harshal_pan.dart';
 
 class PanCardKyc extends StatefulWidget {
   const PanCardKyc({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class _PanCardKycState extends State<PanCardKyc> {
         appBar: AppBarReeroute(),
         body: Padding(
             padding: EdgeInsets.fromLTRB(
-                28, MediaQuery.of(context).size.height * 0.05, 29, 0),
+                22, MediaQuery.of(context).size.height * 0.05, 29, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -62,7 +62,7 @@ class _PanCardKycState extends State<PanCardKyc> {
                     ),
                     child: ClipOval(
                       child: Padding(
-                        padding: const EdgeInsets.all(7.0),
+                        padding: EdgeInsets.fromLTRB(7, 7, 7, 7),
                         child: Container(
                           decoration: BoxDecoration(),
                           child: Image.asset(
@@ -91,6 +91,76 @@ class _PanCardKycState extends State<PanCardKyc> {
                     size: 32,
                   ),
                 ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(30, 0, 0, 8),
+                  child: Container(
+                    height: 41,
+                    width: 2,
+                    color: Color(0x26000000),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 3),
+                  child: Container(
+                    width: 58, // Adjust the width as needed
+                    // Adjust the height as needed
+                    foregroundDecoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: Color(0xff2A4F6D1A),
+                        width: 1.0,
+                      ),
+                    ),
+                    child: ClipOval(
+                      child: Padding(
+                        padding: EdgeInsets.fromLTRB(7, 7, 7, 7),
+                        child: Container(
+                          decoration: BoxDecoration(),
+                          child: Image.asset(
+                            'assets/images/webVector.png',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(32, 8, 0, 8),
+                  child: Container(
+                    height: 41,
+                    width: 2,
+                    color: Color(0x26000000),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 0),
+                  child: Container(
+                    width: 68, // Adjust the width as needed
+                    // Adjust the height as needed
+                    foregroundDecoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: Color(0xff2A4F6D1A),
+                        width: 1.0,
+                      ),
+                    ),
+                    child: ClipOval(
+                      child: Padding(
+                        padding: EdgeInsets.fromLTRB(7, 7, 7, 7),
+                        child: Container(
+                          decoration: BoxDecoration(),
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 5),
+                            child: Image.asset(
+                              'assets/images/gstIcon.png',
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
                 Expanded(
                   child: Container(
                     alignment: Alignment.bottomCenter,
@@ -110,7 +180,7 @@ class _PanCardKycState extends State<PanCardKyc> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => BottomNavigation()));
+                                  builder: (context) => HarshalPan()));
                         },
                         child: Text(
                           'Continue my KYC'.tr,

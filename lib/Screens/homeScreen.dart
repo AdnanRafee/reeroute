@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:reeroute/Screens/route_laneAddress.dart';
 import 'package:reeroute/common/appBarReeroute.dart';
 import 'package:reeroute/pages/reviewPage_1.dart';
 import 'package:reeroute/util/colors.dart';
@@ -28,7 +30,24 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffF8F8F8),
-      appBar: AppBarReeroute(),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        title: Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.fromLTRB(12, 0, 26, 0),
+              child: SvgPicture.asset('assets/images/headerIcon.svg'),
+            ),
+            Spacer(),
+            Padding(
+              padding: EdgeInsets.only(right: 6),
+              child: Image.asset('assets/images/Notification.png'),
+            )
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -112,6 +131,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         endChild: Padding(
                           padding: EdgeInsets.fromLTRB(20, 0, 30, 0),
                           child: TextField(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => RouteAddress()));
+                            },
                             decoration: InputDecoration(
                                 contentPadding:
                                     EdgeInsets.symmetric(vertical: 0),
@@ -197,20 +222,20 @@ class _HomeScreenState extends State<HomeScreen> {
                             SizedBox(
                               width: 220,
                               child: Padding(
-                                padding: EdgeInsets.symmetric(vertical: 13),
+                                padding: EdgeInsets.only(top: 13),
                                 child: Text(
                                   'Lorem Ipsum is simply dummy text of the  printing and typesetting industry.'
                                       .tr,
                                   style: TextStyle(
                                       color: Color(0xff2A4F6DCC), fontSize: 12),
-                                  maxLines: 4,
+                                  maxLines: 3,
                                   softWrap: false,
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(bottom: 17),
+                              padding: EdgeInsets.only(bottom: 20),
                               child: Text(
                                 'Start KYC now'.tr,
                                 style: TextStyle(

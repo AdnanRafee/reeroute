@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:reeroute/Screens/homeScreen.dart';
 
 import '../Screens/bookings.dart';
+import '../Screens/profile.dart';
+import '../util/colors.dart';
 
 class BottomNavigation extends StatefulWidget implements PreferredSizeWidget {
   const BottomNavigation({Key? key}) : super(key: key);
@@ -12,23 +14,33 @@ class BottomNavigation extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  int _myIndex = 0;
-  final screens = [HomeScreen(), Bookings()];
+  int myIndex = 0;
+  final screens = [HomeScreen(), Bookings(), Profile()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: screens[_myIndex],
+      body: screens[myIndex],
       bottomNavigationBar: Container(
         height: 67,
         child: BottomNavigationBar(
-            currentIndex: _myIndex,
+            currentIndex: myIndex,
             onTap: (index) {
               setState(() {
-                _myIndex = index;
+                myIndex = index;
               });
             },
             items: [
               BottomNavigationBarItem(
+                // activeIcon: Container(
+                //   decoration: UnderlineTabIndicator(
+                //     borderSide: BorderSide(
+                //       color: ColorSelect.orangeColor,
+                //       width: 3,
+                //     ),
+                //     borderRadius: BorderRadius.circular(10),
+                //     insets: EdgeInsets.fromLTRB(40, 0.0, 40.0, 20.0),
+                //   ),
+                // ),                                               Important !!!!
                 icon: Image.asset(
                   'assets/images/home.png',
                   fit: BoxFit.fitWidth,

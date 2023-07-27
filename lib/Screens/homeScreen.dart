@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:reeroute/Screens/bookingDetails.dart';
 import 'package:reeroute/Screens/route_laneAddress.dart';
-import 'package:reeroute/common/appBarReeroute.dart';
 import 'package:reeroute/pages/reviewPage_1.dart';
 import 'package:reeroute/util/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -84,6 +84,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                             fontFamily: 'krub',
                                             color: ColorSelect.primaryColor))),
                                 TextField(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                RouteAddress()));
+                                  },
                                   decoration: InputDecoration(
                                       contentPadding:
                                           EdgeInsets.symmetric(vertical: 0),
@@ -186,8 +193,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             // Container(child: Image.asset('assets/images/truckReeroute.png')),
             Padding(
-                padding: EdgeInsets.fromLTRB(
-                    35, MediaQuery.of(context).size.height * 0.03, 35, 25),
+                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
                 child: Container(
                   height: 148,
                   decoration: BoxDecoration(
@@ -235,7 +241,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(bottom: 20),
+                              padding: EdgeInsets.only(top: 20),
                               child: Text(
                                 'Start KYC now'.tr,
                                 style: TextStyle(
@@ -378,7 +384,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     child: Text(
                                       'Chat on WhatsApp'.tr,
                                       style: TextStyle(
-                                        fontSize: 12,
+                                        fontSize: 11,
                                         fontFamily: 'inter',
                                         fontWeight: FontWeight.w400,
                                       ),
@@ -415,74 +421,82 @@ class _HomeScreenState extends State<HomeScreen> {
                     padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
                     width: 350,
                     height: 67,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Row(children: [
-                          Text(
-                            'Mumbai'.tr,
-                            style: TextStyle(
-                                color: ColorSelect.primaryColor,
-                                fontFamily: 'rubik',
-                                fontSize: 18),
-                          ),
-                          SizedBox(
-                            width: 25,
-                          ),
-                          Icon(
-                            Icons.arrow_forward,
-                            color: Color(0XFF003A5D),
-                          ),
-                          SizedBox(
-                            width: 25,
-                          ),
-                          Text(
-                            'Delhi',
-                            style: TextStyle(
-                                color: ColorSelect.primaryColor,
-                                fontFamily: 'rubik',
-                                fontSize: 18),
-                          ),
-                          Spacer(),
-                          Padding(
-                            padding: EdgeInsets.only(top: 10),
-                            child: Icon(
-                              Icons.chevron_right,
-                              color: Color(0xff003A5D),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => BookingDetails()));
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Row(children: [
+                            Text(
+                              'Mumbai'.tr,
+                              style: TextStyle(
+                                  color: ColorSelect.primaryColor,
+                                  fontFamily: 'rubik',
+                                  fontSize: 18),
                             ),
-                          )
-                        ]),
-                        Padding(
-                          padding: EdgeInsets.zero,
-                          child: Row(
-                            children: [
-                              Text(
-                                '6FT. Truck'.tr,
-                                style: TextStyle(
-                                    color: ColorSelect.primaryColor,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w300,
-                                    fontFamily: 'krub'),
+                            SizedBox(
+                              width: 25,
+                            ),
+                            Icon(
+                              Icons.arrow_forward,
+                              color: Color(0XFF003A5D),
+                            ),
+                            SizedBox(
+                              width: 25,
+                            ),
+                            Text(
+                              'Delhi',
+                              style: TextStyle(
+                                  color: ColorSelect.primaryColor,
+                                  fontFamily: 'rubik',
+                                  fontSize: 18),
+                            ),
+                            Spacer(),
+                            Padding(
+                              padding: EdgeInsets.only(top: 10),
+                              child: Icon(
+                                Icons.chevron_right,
+                                color: Color(0xff003A5D),
                               ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 38),
-                                child: Text(
-                                  'Processed Items'.tr,
+                            )
+                          ]),
+                          Padding(
+                            padding: EdgeInsets.zero,
+                            child: Row(
+                              children: [
+                                Text(
+                                  '6FT. Truck'.tr,
                                   style: TextStyle(
                                       color: ColorSelect.primaryColor,
                                       fontSize: 12,
                                       fontWeight: FontWeight.w300,
                                       fontFamily: 'krub'),
                                 ),
-                              )
-                            ],
+                                Padding(
+                                  padding: EdgeInsets.only(left: 38),
+                                  child: Text(
+                                    'Processed Items'.tr,
+                                    style: TextStyle(
+                                        color: ColorSelect.primaryColor,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w300,
+                                        fontFamily: 'krub'),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
-                        ),
-                        Divider(
-                          thickness: 1,
-                          color: Color(0xffD3D3D3),
-                        ),
-                      ],
+                          Divider(
+                            thickness: 1,
+                            color: Color(0xffD3D3D3),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 );

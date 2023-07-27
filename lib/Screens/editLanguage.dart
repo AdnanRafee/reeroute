@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:reeroute/util/colors.dart';
 
+import '../common/button.dart';
+
 class EditLanguage extends StatefulWidget {
   const EditLanguage({Key? key}) : super(key: key);
 
@@ -101,54 +103,63 @@ class _EditLanguageState extends State<EditLanguage> {
             height: 3,
           ),
         ),
-        Expanded(
-          child: Container(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.25),
-                    blurRadius: 48,
-                    offset: Offset(0, 8),
-                  ),
-                ],
-              ),
-              height: 54,
-              width: MediaQuery.of(context).size.width *
-                  0.9, // Adjust the width value as needed
-              margin: EdgeInsets.symmetric(vertical: 16),
-              child: ElevatedButton(
-                style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStatePropertyAll(Color(0xffF79633)),
-                    shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16)))),
-                onPressed: () {
-                  if (selectedLanguageIndex == 1) {
-                    var locale = Locale('hi', 'IN');
-                    Get.updateLocale(locale);
-                  } else if (selectedLanguageIndex == 0) {
-                    selectedLanguageIndex == 1;
-                    var locale = Locale('en', 'US');
-                    Get.updateLocale(locale);
-                  }
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) =>
-                  //             UpdateEditProfile()));
-                },
-                child: Text(
-                  'Update'.tr,
-                  style: TextStyle(
-                      color: Colors.white, fontSize: 22, fontFamily: 'inter'),
-                ),
-              ),
-            ),
-          ),
-        )
+        // Expanded(
+        //   child: Container(
+        //     alignment: Alignment.bottomCenter,
+        //     child: Container(
+        //       decoration: BoxDecoration(
+        //         boxShadow: [
+        //           BoxShadow(
+        //             color: Colors.black.withOpacity(0.25),
+        //             blurRadius: 48,
+        //             offset: Offset(0, 8),
+        //           ),
+        //         ],
+        //       ),
+        //       height: 54,
+        //       width: MediaQuery.of(context).size.width *
+        //           0.9, // Adjust the width value as needed
+        //       margin: EdgeInsets.symmetric(vertical: 16),
+        //       child: ElevatedButton(
+        //         style: ButtonStyle(
+        //             backgroundColor:
+        //                 MaterialStatePropertyAll(Color(0xffF79633)),
+        //             shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+        //                 borderRadius: BorderRadius.circular(16)))),
+        //         onPressed: () {
+        //           if (selectedLanguageIndex == 1) {
+        //             var locale = Locale('hi', 'IN');
+        //             Get.updateLocale(locale);
+        //           } else if (selectedLanguageIndex == 0) {
+        //             selectedLanguageIndex == 1;
+        //             var locale = Locale('en', 'US');
+        //             Get.updateLocale(locale);
+        //           }
+        //
+        //         },
+        //         child: Text(
+        //           'Update'.tr,
+        //           style: TextStyle(
+        //               color: Colors.white, fontSize: 22, fontFamily: 'inter'),
+        //         ),
+        //       ),
+        //     ),
+        //   ),
+        // )
       ]),
+      bottomNavigationBar: ContinueButton(
+        title: 'Update',
+        onPressed: () {
+          if (selectedLanguageIndex == 1) {
+            var locale = Locale('hi', 'IN');
+            Get.updateLocale(locale);
+          } else if (selectedLanguageIndex == 0) {
+            selectedLanguageIndex == 1;
+            var locale = Locale('en', 'US');
+            Get.updateLocale(locale);
+          }
+        },
+      ),
     );
   }
 }

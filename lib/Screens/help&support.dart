@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../common/bottomNavigation.dart';
+import '../common/button.dart';
 
 class HelpSupport extends StatefulWidget {
   const HelpSupport({Key? key}) : super(key: key);
@@ -35,45 +35,15 @@ class _HelpSupportState extends State<HelpSupport> {
           SizedBox(
             height: 40,
           ),
-          Text('the 3rd party integration with Tawk.to'),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25),
-              child: Container(
-                height: 104,
-                margin: EdgeInsets.symmetric(vertical: 16),
-                alignment: Alignment.bottomCenter,
-                child: Row(
-                  children: [
-                    Expanded(
-                        child: SizedBox(
-                      height: 54,
-                      child: ElevatedButton(
-                          style: ButtonStyle(
-                              backgroundColor:
-                                  MaterialStatePropertyAll(Color(0xffF79633)),
-                              shape: MaterialStatePropertyAll(
-                                  RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(12)))),
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => BottomNavigation()));
-                          },
-                          child: Text(
-                            'Send'.tr,
-                            style: TextStyle(fontFamily: 'inter', fontSize: 18),
-                          )),
-                    ))
-                  ],
-                ),
-              ),
-            ),
-          ),
+          Center(child: Text('the 3rd party integration with Tawk.to')),
         ],
       ),
+      bottomNavigationBar: ContinueButton(
+          title: 'Send',
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => BottomNavigation()));
+          }),
     );
   }
 }

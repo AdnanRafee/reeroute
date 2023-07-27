@@ -76,6 +76,9 @@ flutter:
     - family: inter
       fonts:
         - asset: assets/fonts/Inter-Regular.ttf
+    - family: poppins
+      fonts:
+        - asset: assets/fonts/Rubik-Regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

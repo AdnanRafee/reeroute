@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:reeroute/common/button.dart';
 
 import 'package:reeroute/pages/page_1.dart';
 import 'package:reeroute/pages/page_2.dart';
@@ -24,93 +25,70 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarReeroute(),
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(
-            35, MediaQuery.of(context).size.height * 0.06, 35, 0),
-        child: Column(
-          children: [
-            Center(
-              child: Text(
-                'Welcome to Reeroute.'.tr,
-                style: TextStyle(
-                    fontFamily: 'rubik',
-                    fontSize: 24,
-                    color: Color(0xff2A4F6D),
-                    fontWeight: FontWeight.w500),
-              ),
-            ),
-            SizedBox(
-              height: 80,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 0),
-              child: SizedBox(
-                height: 409,
-                width: MediaQuery.of(context).size.width,
-                child: PageView(
-                  controller: _controller,
-                  onPageChanged: (index) {
-                    setState(() {
-                      onLastPage = (index == 2);
-                    });
-                  },
-                  children: [Page1(), Page2(), Page3()],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(
+              35, MediaQuery.of(context).size.height * 0.06, 35, 0),
+          child: Column(
+            children: [
+              Center(
+                child: Text(
+                  'Welcome to Reeroute.'.tr,
+                  style: TextStyle(
+                      fontFamily: 'rubik',
+                      fontSize: 24,
+                      color: Color(0xff2A4F6D),
+                      fontWeight: FontWeight.w500),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 0,
-            ),
-            SmoothPageIndicator(
-              controller: _controller,
-              count: 3,
-              effect: ExpandingDotsEffect(
-                  activeDotColor: Color(0xffF79633),
-                  dotColor: Color(0xffF79633),
-                  dotHeight: 10,
-                  dotWidth: 10),
-            ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  height: 54,
-                  width: MediaQuery.of(context).size.width *
-                      0.9, // Adjust the width value as needed
-                  margin: EdgeInsets.symmetric(vertical: 16),
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStatePropertyAll(Color(0xffF79633)),
-                        shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16)))),
-                    onPressed: () {
-                      onLastPage
-                          ? Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SignUpWithMobile()))
-                          : _controller.nextPage(
-                              duration: Duration(milliseconds: 400),
-                              curve: Curves.easeInOut); // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => SignUpWithMobile()));
+              SizedBox(
+                height: 80,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 0),
+                child: SizedBox(
+                  height: 409,
+                  width: MediaQuery.of(context).size.width,
+                  child: PageView(
+                    controller: _controller,
+                    onPageChanged: (index) {
+                      setState(() {
+                        onLastPage = (index == 2);
+                      });
                     },
-                    child: Text(
-                      'Start'.tr,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 22,
-                          fontFamily: 'inter'),
-                    ),
+                    children: [Page1(), Page2(), Page3()],
                   ),
                 ),
               ),
-            )
-          ],
+              SizedBox(
+                height: 0,
+              ),
+              SmoothPageIndicator(
+                controller: _controller,
+                count: 3,
+                effect: ExpandingDotsEffect(
+                    activeDotColor: Color(0xffF79633),
+                    dotColor: Color(0xffF79633),
+                    dotHeight: 10,
+                    dotWidth: 10),
+              ),
+            ],
+          ),
         ),
       ),
+      bottomNavigationBar: ContinueBtnSimple(
+          title: 'Start',
+          onPressed: () {
+            onLastPage
+                ? Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SignUpWithMobile()))
+                : _controller.nextPage(
+                    duration: Duration(milliseconds: 400),
+                    curve: Curves.easeInOut); // Navigator.push(
+            //     context,
+            //     MaterialPageRoute(
+            //         builder: (context) => SignUpWithMobile()));
+          }),
     );
   }
 }

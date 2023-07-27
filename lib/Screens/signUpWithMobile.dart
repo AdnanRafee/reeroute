@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:reeroute/Screens/otpScreen.dart';
+import 'package:reeroute/common/button.dart';
 
 class SignUpWithMobile extends StatefulWidget {
   const SignUpWithMobile({Key? key}) : super(key: key);
@@ -105,7 +106,7 @@ class _SignUpWithMobileState extends State<SignUpWithMobile> {
             ),
             Flexible(
               child: Container(
-                margin: EdgeInsets.only(right: 20),
+                margin: EdgeInsets.only(left: 0),
                 alignment: Alignment.bottomLeft,
                 child: Row(
                   children: [
@@ -148,30 +149,15 @@ class _SignUpWithMobileState extends State<SignUpWithMobile> {
                         style: TextStyle(color: Color(0xff0ACF83)))
                   ]))),
             ),
-            Container(
-              width: double.infinity,
-              height: 54,
-              margin: EdgeInsets.symmetric(vertical: 16),
-              child: ElevatedButton(
-                style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStatePropertyAll(Color(0xffF79633)),
-                    shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12)))),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => OtpScreen()));
-                },
-                child: Text('Continue'.tr,
-                    style: TextStyle(
-                        fontFamily: 'inter',
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400)),
-              ),
-            )
           ],
         ),
       ),
+      bottomNavigationBar: ContinueBtnSimple(
+          title: 'Continue',
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => OtpScreen()));
+          }),
     );
   }
 }

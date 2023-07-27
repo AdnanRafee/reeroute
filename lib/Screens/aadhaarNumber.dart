@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:reeroute/Screens/aadhaarSuccessfullyAdded.dart';
 
+import '../common/button.dart';
 import '../util/colors.dart';
 
 class AadhaarNumber extends StatefulWidget {
@@ -129,220 +130,188 @@ class _AadhaarNumberState extends State<AadhaarNumber> {
               ),
             ),
           ),
-          Expanded(
-            child: Container(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                height: 54,
-                width: MediaQuery.of(context).size.width *
-                    0.9, // Adjust the width value as needed
-                margin: EdgeInsets.symmetric(vertical: 0),
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStatePropertyAll(Color(0xffF79633)),
-                      shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16)))),
-                  onPressed: () {
-                    showModalBottomSheet(
-                      constraints: BoxConstraints(
-                        maxWidth: MediaQuery.of(context).size.width * 0.92,
-                      ),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12)),
-                      context: context,
-                      builder: (context) {
-                        return Container(
-                          height: 282,
-                          width: MediaQuery.of(context).size.width * 0.92,
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 9),
-                            child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.fromLTRB(11, 29, 0, 0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Confirm AADHAAR Details',
-                                          style: TextStyle(
-                                              fontFamily: 'rubik',
-                                              color: ColorSelect.primaryColor,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w500),
-                                        ),
-                                        SizedBox(
-                                          height: 7,
-                                        ),
-                                        Text(
-                                          'Please verify your AADHAR details',
-                                          style: TextStyle(
-                                              fontFamily: 'krub',
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 12,
-                                              color: ColorSelect.primaryColor),
-                                        ),
-                                        SizedBox(
-                                          height: 18.69,
-                                        ),
-                                        Row(
-                                          children: [
-                                            Text('AADHAAR Number',
-                                                style: TextStyle(
-                                                    fontFamily: 'krub',
-                                                    fontWeight: FontWeight.w600,
-                                                    fontSize: 12,
-                                                    color: ColorSelect
-                                                        .primaryColor)),
-                                            SizedBox(
-                                              width: 110,
-                                            ),
-                                            Text('Date of Birth',
-                                                style: TextStyle(
-                                                    fontFamily: 'krub',
-                                                    fontWeight: FontWeight.w600,
-                                                    fontSize: 12,
-                                                    color: ColorSelect
-                                                        .primaryColor))
-                                          ],
-                                        ),
-                                        SizedBox(height: 5),
-                                        Row(
-                                          children: [
-                                            Text('1234 5678 9087',
-                                                style: TextStyle(
-                                                    fontFamily: 'krub',
-                                                    fontWeight: FontWeight.w400,
-                                                    fontSize: 12,
-                                                    color: ColorSelect
-                                                        .primaryColor)),
-                                            SizedBox(
-                                              width: 127,
-                                            ),
-                                            Text('15/10/1998',
-                                                style: TextStyle(
-                                                    fontFamily: 'krub',
-                                                    fontWeight: FontWeight.w400,
-                                                    fontSize: 12,
-                                                    color: ColorSelect
-                                                        .primaryColor))
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          height: 29,
-                                        ),
-                                        Text('AADHAAR Holder’s Name',
-                                            style: TextStyle(
-                                                fontFamily: 'krub',
-                                                fontWeight: FontWeight.w600,
-                                                fontSize: 12,
-                                                color:
-                                                    ColorSelect.primaryColor)),
-                                        SizedBox(
-                                          height: 4.3,
-                                        ),
-                                        Text('SMARAN VENKATESULU UMMADISHETTY',
-                                            style: TextStyle(
-                                                fontFamily: 'krub',
-                                                fontWeight: FontWeight.w400,
-                                                fontSize: 12,
-                                                color:
-                                                    ColorSelect.primaryColor))
-                                      ],
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Container(
-                                      height: 104,
-                                      margin:
-                                          EdgeInsets.symmetric(vertical: 16),
-                                      alignment: Alignment.bottomCenter,
-                                      child: Row(
-                                        children: [
-                                          Expanded(
-                                              flex: 1,
-                                              child: SizedBox(
-                                                height: 54,
-                                                child: ElevatedButton(
-                                                    style: ButtonStyle(
-                                                        backgroundColor:
-                                                            MaterialStatePropertyAll(
-                                                                Colors.white),
-                                                        shape: MaterialStatePropertyAll(
-                                                            RoundedRectangleBorder(
-                                                                side: BorderSide(
-                                                                    color: Color(
-                                                                        0xffF79633)),
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            12)))),
-                                                    onPressed: () {
-                                                      Navigator.pop(context);
-                                                    },
-                                                    child: Text(
-                                                      'Cancel'.tr,
-                                                      style: TextStyle(
-                                                          color:
-                                                              Color(0xffF79633),
-                                                          fontFamily: 'inter',
-                                                          fontSize: 18),
-                                                    )),
-                                              )),
-                                          SizedBox(
-                                            width: 18,
-                                          ),
-                                          Expanded(
-                                              child: SizedBox(
-                                            height: 54,
-                                            child: ElevatedButton(
-                                                style: ButtonStyle(
-                                                    backgroundColor:
-                                                        MaterialStatePropertyAll(
-                                                            Color(0xffF79633)),
-                                                    shape: MaterialStatePropertyAll(
-                                                        RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        12)))),
-                                                onPressed: () {
-                                                  Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              AadhaarSuccessfullyAdded()));
-                                                },
-                                                child: Text(
-                                                  'Confirm'.tr,
-                                                  style: TextStyle(
-                                                      fontFamily: 'inter',
-                                                      fontSize: 18),
-                                                )),
-                                          ))
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ]),
-                          ),
-                        );
-                      },
-                    );
-                  },
-                  child: Text(
-                    'Continue'.tr,
-                    style: TextStyle(
-                        color: Colors.white, fontSize: 22, fontFamily: 'inter'),
-                  ),
-                ),
-              ),
-            ),
-          )
         ]),
+      ),
+      bottomNavigationBar: ContinueButton(
+        title: 'Continue',
+        onPressed: () {
+          showModalBottomSheet(
+            constraints: BoxConstraints(
+              maxWidth: MediaQuery.of(context).size.width * 0.92,
+            ),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            context: context,
+            builder: (context) {
+              return Container(
+                height: 282,
+                width: MediaQuery.of(context).size.width * 0.92,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 9),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(11, 29, 0, 0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Confirm AADHAAR Details',
+                                style: TextStyle(
+                                    fontFamily: 'rubik',
+                                    color: ColorSelect.primaryColor,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                              SizedBox(
+                                height: 7,
+                              ),
+                              Text(
+                                'Please verify your AADHAR details',
+                                style: TextStyle(
+                                    fontFamily: 'krub',
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 12,
+                                    color: ColorSelect.primaryColor),
+                              ),
+                              SizedBox(
+                                height: 18.69,
+                              ),
+                              Row(
+                                children: [
+                                  Text('AADHAAR Number',
+                                      style: TextStyle(
+                                          fontFamily: 'krub',
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 12,
+                                          color: ColorSelect.primaryColor)),
+                                  SizedBox(
+                                    width: 110,
+                                  ),
+                                  Text('Date of Birth',
+                                      style: TextStyle(
+                                          fontFamily: 'krub',
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 12,
+                                          color: ColorSelect.primaryColor))
+                                ],
+                              ),
+                              SizedBox(height: 5),
+                              Row(
+                                children: [
+                                  Text('1234 5678 9087',
+                                      style: TextStyle(
+                                          fontFamily: 'krub',
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 12,
+                                          color: ColorSelect.primaryColor)),
+                                  SizedBox(
+                                    width: 127,
+                                  ),
+                                  Text('15/10/1998',
+                                      style: TextStyle(
+                                          fontFamily: 'krub',
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 12,
+                                          color: ColorSelect.primaryColor))
+                                ],
+                              ),
+                              SizedBox(
+                                height: 29,
+                              ),
+                              Text('AADHAAR Holder’s Name',
+                                  style: TextStyle(
+                                      fontFamily: 'krub',
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 12,
+                                      color: ColorSelect.primaryColor)),
+                              SizedBox(
+                                height: 4.3,
+                              ),
+                              Text('SMARAN VENKATESULU UMMADISHETTY',
+                                  style: TextStyle(
+                                      fontFamily: 'krub',
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 12,
+                                      color: ColorSelect.primaryColor))
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            height: 104,
+                            margin: EdgeInsets.symmetric(vertical: 16),
+                            alignment: Alignment.bottomCenter,
+                            child: Row(
+                              children: [
+                                Expanded(
+                                    flex: 1,
+                                    child: SizedBox(
+                                      height: 54,
+                                      child: ElevatedButton(
+                                          style: ButtonStyle(
+                                              backgroundColor:
+                                                  MaterialStatePropertyAll(
+                                                      Colors.white),
+                                              shape: MaterialStatePropertyAll(
+                                                  RoundedRectangleBorder(
+                                                      side: BorderSide(
+                                                          color: Color(
+                                                              0xffF79633)),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              12)))),
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: Text(
+                                            'Cancel'.tr,
+                                            style: TextStyle(
+                                                color: Color(0xffF79633),
+                                                fontFamily: 'inter',
+                                                fontSize: 18),
+                                          )),
+                                    )),
+                                SizedBox(
+                                  width: 18,
+                                ),
+                                Expanded(
+                                    child: SizedBox(
+                                  height: 54,
+                                  child: ElevatedButton(
+                                      style: ButtonStyle(
+                                          backgroundColor:
+                                              MaterialStatePropertyAll(
+                                                  Color(0xffF79633)),
+                                          shape: MaterialStatePropertyAll(
+                                              RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          12)))),
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    AadhaarSuccessfullyAdded()));
+                                      },
+                                      child: Text(
+                                        'Confirm'.tr,
+                                        style: TextStyle(
+                                            fontFamily: 'inter', fontSize: 18),
+                                      )),
+                                ))
+                              ],
+                            ),
+                          ),
+                        ),
+                      ]),
+                ),
+              );
+            },
+          );
+        },
       ),
     );
   }

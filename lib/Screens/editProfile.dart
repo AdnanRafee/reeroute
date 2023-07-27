@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:reeroute/Screens/updateOtp.dart';
 
+import '../common/button.dart';
+
 class EditProfile extends StatefulWidget {
   const EditProfile({super.key});
 
@@ -180,49 +182,6 @@ class _EditProfileState extends State<EditProfile> {
                             },
                           ),
                         )),
-                    Expanded(
-                      child: Container(
-                        alignment: Alignment.bottomCenter,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.25),
-                                blurRadius: 48,
-                                offset: Offset(0, 8),
-                              ),
-                            ],
-                          ),
-                          height: 54,
-                          width: MediaQuery.of(context).size.width *
-                              0.9, // Adjust the width value as needed
-                          margin: EdgeInsets.symmetric(vertical: 16),
-                          child: ElevatedButton(
-                            style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStatePropertyAll(Color(0xffF79633)),
-                                shape: MaterialStatePropertyAll(
-                                    RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(16)))),
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          UpdateEditProfile()));
-                            },
-                            child: Text(
-                              'Send OTP'.tr,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 22,
-                                  fontFamily: 'inter'),
-                            ),
-                          ),
-                        ),
-                      ),
-                    )
                   ],
                 ),
               ),
@@ -230,6 +189,12 @@ class _EditProfileState extends State<EditProfile> {
           ),
         ],
       ),
+      bottomNavigationBar: ContinueButton(
+          title: 'Send OTP',
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => UpdateEditProfile()));
+          }),
       // bottomNavigationBar: ContinueBtn(
       //   text: 'Update',
       //   onTap: () {

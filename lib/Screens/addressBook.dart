@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:reeroute/Screens/profileAddressSearch.dart';
 import 'package:reeroute/common/loadingAddress.dart';
 import 'package:reeroute/common/unloadingAddress.dart';
+import '../common/button.dart';
 import '../util/colors.dart';
 
 class AddressBook extends StatefulWidget {
@@ -86,90 +86,56 @@ class _AddressBookState extends State<AddressBook> {
                   children: [LoadingAddress(), UnloadingAddress()],
                 ),
               ),
-
-              Expanded(
-                child: Container(
-                  alignment: Alignment.bottomCenter,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.25),
-                          blurRadius: 48,
-                          offset: Offset(0, 8),
-                        ),
-                      ],
-                    ),
-                    height: 54,
-                    width: MediaQuery.of(context).size.width *
-                        0.9, // Adjust the width value as needed
-                    margin: EdgeInsets.symmetric(vertical: 16),
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStatePropertyAll(Color(0xffF79633)),
-                          shape: MaterialStatePropertyAll(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(16)))),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ProfileAdressSearch()));
-                      },
-                      child: Text(
-                        'Add new Address'.tr,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
-                            fontFamily: 'inter'),
-                      ),
-                    ),
-                  ),
-                ),
-              )
-              // Container(
-              //   alignment: Alignment.bottomCenter,
+              // Expanded(
               //   child: Container(
-              //     decoration: BoxDecoration(
-              //       boxShadow: [
-              //         BoxShadow(
-              //           color: Colors.black.withOpacity(0.25),
-              //           blurRadius: 48,
-              //           offset: Offset(0, 8),
+              //     alignment: Alignment.bottomCenter,
+              //     child: Container(
+              //       decoration: BoxDecoration(
+              //         boxShadow: [
+              //           BoxShadow(
+              //             color: Colors.black.withOpacity(0.25),
+              //             blurRadius: 48,
+              //             offset: Offset(0, 8),
+              //           ),
+              //         ],
+              //       ),
+              //       height: 54,
+              //       width: MediaQuery.of(context).size.width *
+              //           0.9, // Adjust the width value as needed
+              //       margin: EdgeInsets.symmetric(vertical: 16),
+              //       child: ElevatedButton(
+              //         style: ButtonStyle(
+              //             backgroundColor:
+              //                 MaterialStatePropertyAll(Color(0xffF79633)),
+              //             shape: MaterialStatePropertyAll(
+              //                 RoundedRectangleBorder(
+              //                     borderRadius: BorderRadius.circular(16)))),
+              //         onPressed: () {
+              //           Navigator.push(
+              //               context,
+              //               MaterialPageRoute(
+              //                   builder: (context) => ProfileAdressSearch()));
+              //         },
+              //         child: Text(
+              //           'Add new Address'.tr,
+              //           style: TextStyle(
+              //               color: Colors.white,
+              //               fontSize: 22,
+              //               fontFamily: 'inter'),
               //         ),
-              //       ],
-              //     ),
-              //     height: 54,
-              //     width: MediaQuery.of(context).size.width *
-              //         0.9, // Adjust the width value as needed
-              //     margin: EdgeInsets.symmetric(vertical: 16),
-              //     child: ElevatedButton(
-              //       style: ButtonStyle(
-              //           backgroundColor:
-              //               MaterialStatePropertyAll(Color(0xffF79633)),
-              //           shape: MaterialStatePropertyAll(
-              //               RoundedRectangleBorder(
-              //                   borderRadius: BorderRadius.circular(16)))),
-              //       onPressed: () {
-              //         // Navigator.push(
-              //         //     context,
-              //         //     MaterialPageRoute(
-              //         //         builder: (context) =>
-              //         //             UpdateEditProfile()));
-              //       },
-              //       child: Text(
-              //         'Update'.tr,
-              //         style: TextStyle(
-              //             color: Colors.white,
-              //             fontSize: 22,
-              //             fontFamily: 'inter'),
               //       ),
               //     ),
               //   ),
               // )
             ],
           ),
+        ),
+        bottomNavigationBar: ContinueButton(
+          title: 'Add new Address',
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => ProfileAdressSearch()));
+          },
         ),
       ),
     );

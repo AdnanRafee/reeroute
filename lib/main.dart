@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:reeroute/Screens/signupScreen.dart';
+import 'package:reeroute/Screens/splash%20and%20language/signupScreen.dart';
 
 import 'LocaleString.dart';
 

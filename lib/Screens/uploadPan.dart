@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:reeroute/Screens/panNumber.dart';
 import 'package:reeroute/common/appBarReeroute.dart';
 import 'package:reeroute/util/colors.dart';
 
-import 'harshal_pan.dart';
+import 'panCardFrontSide.dart';
 
 class UploadPan extends StatefulWidget {
   const UploadPan({Key? key}) : super(key: key);
@@ -104,7 +103,7 @@ class _UploadPanState extends State<UploadPan> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => HarshalPan()));
+                                  builder: (context) => PanCardFrontSide()));
                         },
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,

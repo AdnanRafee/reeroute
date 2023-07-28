@@ -4,7 +4,7 @@ import 'package:reeroute/common/appBarReeroute.dart';
 import 'package:reeroute/common/button.dart';
 
 import '../util/colors.dart';
-import 'harshal_pan.dart';
+import 'panCardFrontSide.dart';
 
 class PanCardKyc extends StatefulWidget {
   const PanCardKyc({Key? key}) : super(key: key);
@@ -166,8 +166,8 @@ class _PanCardKycState extends State<PanCardKyc> {
       bottomNavigationBar: ContinueBtnSimple(
           title: 'Continue my KYC',
           onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => HarshalPan()));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => PanCardFrontSide()));
           }),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:reeroute/Screens/Onboarding%20&%20KYC/aadhaarNumber.dart';
+import 'package:reeroute/Screens/Onboarding%20&%20KYC/aadhaarFrontSide.dart';
+import 'package:reeroute/Screens/Onboarding%20&%20KYC/panCardCheck.dart';
 import 'package:reeroute/common/appBarReeroute.dart';
 import 'package:reeroute/util/colors.dart';
 
@@ -94,7 +95,7 @@ class _PanSuccessfullyAddedState extends State<PanSuccessfullyAdded> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => AadhaarNumber()));
+                                  builder: (context) => PanCardCheck()));
                         },
                         child: Text(
                           'Continue'.tr,

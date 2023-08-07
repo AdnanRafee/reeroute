@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:reeroute/Screens/Onboarding%20&%20KYC/panCardKyc.dart';
+import 'package:reeroute/common/appBarReeroute.dart';
 import 'package:reeroute/common/homebottomNavigation.dart';
 
 class CompleteKyc extends StatefulWidget {
@@ -14,9 +15,10 @@ class _CompleteKycState extends State<CompleteKyc> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBarReeroute(),
         body: Padding(
             padding: EdgeInsets.fromLTRB(
-                29, MediaQuery.of(context).size.height * 0.15, 29, 0),
+                29, MediaQuery.of(context).size.height * 0.05, 29, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:reeroute/common/appBarReeroute.dart';
-import 'package:reeroute/common/button.dart';
+import 'package:reeroute/Screens/Onboarding%20&%20KYC/kycSuccessfull.dart';
 
+import '../../common/appBarReeroute.dart';
+import '../../common/button.dart';
+import '../../common/homebottomNavigation.dart';
 import '../../util/colors.dart';
-import 'panCardFrontSide.dart';
+import 'aadhaarFrontSide.dart';
 
-class PanCardKyc extends StatefulWidget {
-  const PanCardKyc({Key? key}) : super(key: key);
+class AadhaarCheck extends StatefulWidget {
+  const AadhaarCheck({Key? key}) : super(key: key);
 
   @override
-  State<PanCardKyc> createState() => _PanCardKycState();
+  State<AadhaarCheck> createState() => _AadhaarCheckState();
 }
 
-class _PanCardKycState extends State<PanCardKyc> {
+class _AadhaarCheckState extends State<AadhaarCheck> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,48 +51,47 @@ class _PanCardKycState extends State<PanCardKyc> {
                 height: 30,
               ),
               ListTile(
-                contentPadding: EdgeInsetsDirectional.symmetric(horizontal: 0),
-                leading: Container(
-                  width: 60, // Adjust the width as needed
-                  // Adjust the height as needed
-                  foregroundDecoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: Color(0xff2A4F6D1A),
-                      width: 1.0,
+                  contentPadding:
+                      EdgeInsetsDirectional.symmetric(horizontal: 0),
+                  leading: Container(
+                    width: 60, // Adjust the width as needed
+                    // Adjust the height as needed
+                    foregroundDecoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: Color(0xff2A4F6D1A),
+                        width: 1.0,
+                      ),
                     ),
-                  ),
-                  child: ClipOval(
-                    child: Padding(
-                      padding: EdgeInsets.fromLTRB(7, 7, 7, 7),
-                      child: Container(
-                        decoration: BoxDecoration(),
-                        child: Image.asset(
-                          'assets/images/webVector.png',
-                          fit: BoxFit.cover,
+                    child: ClipOval(
+                      child: Padding(
+                        padding: EdgeInsets.fromLTRB(7, 7, 7, 7),
+                        child: Container(
+                          decoration: BoxDecoration(),
+                          child: Image.asset(
+                            'assets/images/webVector.png',
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                title: Text(
-                  'PAN Card'.tr,
-                  style: TextStyle(fontSize: 18),
-                ),
-                subtitle: Text(
-                  'Govt. issued PAN Card'.tr,
-                  style: TextStyle(
-                    color: ColorSelect.secondaryGreen,
-                    fontFamily: 'rubik',
-                    fontSize: 12,
+                  title: Text(
+                    'PAN Card'.tr,
+                    style: TextStyle(fontSize: 18),
                   ),
-                ),
-                trailing: Icon(
-                  Icons.chevron_right,
-                  color: Color(0xff003A5D),
-                  size: 32,
-                ),
-              ),
+                  subtitle: Text(
+                    'Govt. issued PAN Card'.tr,
+                    style: TextStyle(
+                      color: ColorSelect.secondaryGreen,
+                      fontFamily: 'rubik',
+                      fontSize: 12,
+                    ),
+                  ),
+                  trailing: Image.asset(
+                    'assets/images/doubleTick.png',
+                    width: 32,
+                  )),
               Padding(
                 padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
                 child: Container(
@@ -131,15 +132,14 @@ class _PanCardKycState extends State<PanCardKyc> {
                 subtitle: Text(
                   'Govt. issued GST Certificate'.tr,
                   style: TextStyle(
-                    color: Color(0xffDBDADE),
+                    color: ColorSelect.secondaryGreen,
                     fontFamily: 'rubik',
                     fontSize: 12,
                   ),
                 ),
-                trailing: Icon(
-                  Icons.chevron_right,
-                  color: Color(0xff003A5D),
-                  size: 32,
+                trailing: Image.asset(
+                  'assets/images/doubleTick.png',
+                  width: 32,
                 ),
               ),
               Padding(
@@ -182,15 +182,14 @@ class _PanCardKycState extends State<PanCardKyc> {
                 subtitle: Text(
                   'Govt. issued AADHAR'.tr,
                   style: TextStyle(
-                    color: Color(0xffDBDADE),
+                    color: ColorSelect.secondaryGreen,
                     fontFamily: 'rubik',
                     fontSize: 12,
                   ),
                 ),
-                trailing: Icon(
-                  Icons.chevron_right,
-                  color: Color(0xff003A5D),
-                  size: 32,
+                trailing: Image.asset(
+                  'assets/images/doubleTick.png',
+                  width: 32,
                 ),
               ),
             ],
@@ -199,7 +198,7 @@ class _PanCardKycState extends State<PanCardKyc> {
           title: 'Continue my KYC'.tr,
           onPressed: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => PanCardFrontSide()));
+                MaterialPageRoute(builder: (context) => KycSuccessfull()));
           }),
     );
   }

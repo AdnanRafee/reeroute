@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:reeroute/Screens/Onboarding%20&%20KYC/aadhaarCheck.dart';
 import 'package:reeroute/Screens/Onboarding%20&%20KYC/gstNumber.dart';
 import 'package:reeroute/common/appBarReeroute.dart';
 
@@ -96,7 +97,7 @@ class _AadhaarSuccessfullyAddedState extends State<AadhaarSuccessfullyAdded> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => GstNumber()));
+                                  builder: (context) => AadhaarCheck()));
                         },
                         child: Text(
                           'Continue'.tr,

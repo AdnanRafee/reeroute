@@ -44,173 +44,176 @@ class _SignUpScreenState extends State<SignUpScreen> {
               SizedBox(
                 height: 35,
               ),
-              Container(
-                  height: 240,
-                  child: Center(
-                      child: Image.asset('assets/images/languages1.png'))),
-              SizedBox(
-                height: 30,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                      child: InkWell(
-                    onTap: () {
-                      setState(() {
-                        selectedLanguageIndex = 0;
-                      });
-                    },
-                    child: Container(
-                      height: 136,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                                color: Color(0xffF79633),
-                                blurRadius: 2,
-                                offset: Offset(0, 4)),
-                          ],
-                          border: Border.all(color: Color(0xffF79633)),
-                          borderRadius: BorderRadius.circular(
-                            10,
-                          )),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          selectedLanguageIndex == 0
-                              ? Text('English',
-                                  style: TextStyle(
-                                    fontFamily: 'rubik',
-                                    letterSpacing: 0.7,
-                                    color: Color(0xff0ACF83),
-                                    fontSize: 20,
-                                  ))
-                              : Container(),
-                          Text('English (India)',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontFamily: 'krub',
-                                  color: Color(0xff2A4F6D))),
-                        ],
-                      ),
-                    ),
-                  )),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Expanded(
-                      child: InkWell(
-                    onTap: () {
-                      setState(() {
-                        selectedLanguageIndex = 1;
-                      });
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                                color: Color(0xffF79633),
-                                blurRadius: 2,
-                                offset: Offset(0, 4)),
-                          ],
-                          border: Border.all(color: Color(0xffF79633)),
-                          borderRadius: BorderRadius.circular(
-                            10,
-                          )),
-                      height: 136,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          selectedLanguageIndex == 1
-                              ? Text('Hindi',
-                                  style: TextStyle(
-                                    fontFamily: 'rubik',
-                                    letterSpacing: 0.7,
-                                    color: Color(0xff0ACF83),
-                                    fontSize: 20,
-                                  ))
-                              : Container(),
-                          Text(
-                            'Hindi (India)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontFamily: 'krub',
-                                color: Color(0xff2A4F6D)),
-                          ),
-                        ],
-                      ),
-                    ),
-                  )),
-                ],
-              ),
-              SizedBox(
-                height: 15,
-              ),
+              // Container(
+              //     height: 240,
+              //     child: Center(
+              //         child: Image.asset('assets/images/languages1.png'))),
+              // SizedBox(
+              //   height: 30,
+              // ),
+              // Row(
+              //   children: [
+              //     Expanded(
+              //         child: InkWell(
+              //       onTap: () {
+              //         setState(() {
+              //           selectedLanguageIndex = 0;
+              //         });
+              //       },
+              //       child: Container(
+              //         height: 136,
+              //         decoration: BoxDecoration(
+              //             color: Colors.white,
+              //             boxShadow: [
+              //               BoxShadow(
+              //                   color: Color(0xffF79633),
+              //                   blurRadius: 2,
+              //                   offset: Offset(0, 4)),
+              //             ],
+              //             border: Border.all(color: Color(0xffF79633)),
+              //             borderRadius: BorderRadius.circular(
+              //               10,
+              //             )),
+              //         child: Column(
+              //           mainAxisAlignment: MainAxisAlignment.center,
+              //           children: [
+              //             selectedLanguageIndex == 0
+              //                 ? Text('English',
+              //                     style: TextStyle(
+              //                       fontFamily: 'rubik',
+              //                       letterSpacing: 0.7,
+              //                       color: Color(0xff0ACF83),
+              //                       fontSize: 20,
+              //                     ))
+              //                 : Container(),
+              //             Text('English (India)',
+              //                 textAlign: TextAlign.center,
+              //                 style: TextStyle(
+              //                     fontFamily: 'krub',
+              //                     color: Color(0xff2A4F6D))),
+              //           ],
+              //         ),
+              //       ),
+              //     )),
+              //     SizedBox(
+              //       width: 20,
+              //     ),
+              //     Expanded(
+              //         child: InkWell(
+              //       onTap: () {
+              //         setState(() {
+              //           selectedLanguageIndex = 1;
+              //         });
+              //       },
+              //       child: Container(
+              //         decoration: BoxDecoration(
+              //             color: Colors.white,
+              //             boxShadow: [
+              //               BoxShadow(
+              //                   color: Color(0xffF79633),
+              //                   blurRadius: 2,
+              //                   offset: Offset(0, 4)),
+              //             ],
+              //             border: Border.all(color: Color(0xffF79633)),
+              //             borderRadius: BorderRadius.circular(
+              //               10,
+              //             )),
+              //         height: 136,
+              //         child: Column(
+              //           mainAxisAlignment: MainAxisAlignment.center,
+              //           children: [
+              //             selectedLanguageIndex == 1
+              //                 ? Text('Hindi',
+              //                     style: TextStyle(
+              //                       fontFamily: 'rubik',
+              //                       letterSpacing: 0.7,
+              //                       color: Color(0xff0ACF83),
+              //                       fontSize: 20,
+              //                     ))
+              //                 : Container(),
+              //             Text(
+              //               'Hindi (India)',
+              //               textAlign: TextAlign.center,
+              //               style: TextStyle(
+              //                   fontSize: 16,
+              //                   fontFamily: 'krub',
+              //                   color: Color(0xff2A4F6D)),
+              //             ),
+              //           ],
+              //         ),
+              //       ),
+              //     )),
+              //   ],
+              // ),
+              // SizedBox(
+              //   height: 15,
+              // ),
 
-              // ListTile(
-              //   contentPadding: EdgeInsetsDirectional.symmetric(horizontal: 0),
-              //   title: Padding(
-              //     padding: EdgeInsets.only(bottom: 10),
-              //     child: selectedLanguageIndex == 0
-              //         ? Text('English',
-              //             style: TextStyle(
-              //               fontFamily: 'rubik',
-              //               letterSpacing: 0.7,
-              //               color: Color(0xff0ACF83),
-              //               fontSize: 20,
-              //             ))
-              //         : null,
-              //   ),
-              //   subtitle: Text(
-              //     'English (India)',
-              //     style:
-              //         TextStyle(fontFamily: 'krub', fontWeight: FontWeight.w400),
-              //   ),
-              //   trailing: selectedLanguageIndex == 0
-              //       ? Icon(
-              //           Icons.check,
-              //           color: Color(0xff0ACF83),
-              //         )
-              //       : null,
-              //   onTap: () {
-              //     setState(() {
-              //       selectedLanguageIndex = 0;
-              //     });
-              //   },
-              // ),
-              // Divider(
-              //   color: Colors.grey,
-              // ),
-              // ListTile(
-              //   contentPadding: EdgeInsets.symmetric(horizontal: 0),
-              //   title: Padding(
-              //     padding: EdgeInsets.only(bottom: 10.0),
-              //     child: selectedLanguageIndex == 1
-              //         ? Text('Hindi',
-              //             style: TextStyle(
-              //               fontFamily: 'rubik',
-              //               letterSpacing: 0.7,
-              //               color: Color(0xff0ACF83),
-              //               fontSize: 20,
-              //             ))
-              //         : null,
-              //   ),
-              //   subtitle:
-              //       Text('Hindi (India)', style: TextStyle(fontFamily: 'krub')),
-              //   trailing: selectedLanguageIndex == 1
-              //       ? Icon(
-              //           Icons.check,
-              //           color: Color(0xff0ACF83),
-              //         )
-              //       : null,
-              //   onTap: () {
-              //     setState(() {
-              //       selectedLanguageIndex = 1;
-              //     });
-              //   },
-              // ),
+              ListTile(
+                contentPadding: EdgeInsetsDirectional.symmetric(horizontal: 0),
+                title: Padding(
+                  padding: EdgeInsets.only(bottom: 10),
+                  child: selectedLanguageIndex == 0
+                      ? Text('English',
+                          style: TextStyle(
+                            fontFamily: 'rubik',
+                            letterSpacing: 0.7,
+                            color: Color(0xff0ACF83),
+                            fontSize: 20,
+                          ))
+                      : null,
+                ),
+                subtitle: Text(
+                  'English (India)',
+                  style: TextStyle(
+                      fontFamily: 'krub', fontWeight: FontWeight.w400),
+                ),
+                trailing: selectedLanguageIndex == 0
+                    ? Icon(
+                        Icons.check,
+                        color: Color(0xff0ACF83),
+                      )
+                    : null,
+                onTap: () {
+                  setState(() {
+                    selectedLanguageIndex = 0;
+                  });
+                },
+              ),
+              Divider(
+                color: Colors.grey,
+              ),
+              ListTile(
+                contentPadding: EdgeInsets.symmetric(horizontal: 0),
+                title: Padding(
+                  padding: EdgeInsets.only(bottom: 10.0),
+                  child: selectedLanguageIndex == 1
+                      ? Text('Hindi',
+                          style: TextStyle(
+                            fontFamily: 'rubik',
+                            letterSpacing: 0.7,
+                            color: Color(0xff0ACF83),
+                            fontSize: 20,
+                          ))
+                      : null,
+                ),
+                subtitle:
+                    Text('Hindi (India)', style: TextStyle(fontFamily: 'krub')),
+                trailing: selectedLanguageIndex == 1
+                    ? Icon(
+                        Icons.check,
+                        color: Color(0xff0ACF83),
+                      )
+                    : null,
+                onTap: () {
+                  setState(() {
+                    selectedLanguageIndex = 1;
+                  });
+                },
+              ),
+              Divider(
+                color: Colors.grey,
+              ),
 
               // Expanded(
               //   child: Container(

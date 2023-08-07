@@ -43,7 +43,10 @@ class _HomeScreenState extends State<HomeScreen> {
             Spacer(),
             Padding(
               padding: EdgeInsets.only(right: 6),
-              child: Image.asset('assets/images/Notification.png'),
+              child: Image.asset(
+                'assets/images/Notification.png',
+                width: 30,
+              ),
             )
           ],
         ),

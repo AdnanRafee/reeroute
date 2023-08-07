@@ -29,7 +29,113 @@ class _ProfileState extends State<Profile> {
           Padding(
             padding: const EdgeInsets.only(right: 28.0),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return SizedBox(
+                      height: 286,
+                      child: AlertDialog(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        title: Text(
+                          textAlign: TextAlign.center,
+                          'Are you sure you want to logout?',
+                          style: TextStyle(
+                              fontFamily: 'rubik',
+                              fontSize: 18,
+                              color: ColorSelect.primaryColor),
+                        ),
+                        content: Text(
+                          textAlign: TextAlign.center,
+                          'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                          style: TextStyle(
+                              fontFamily: 'krub',
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              color: ColorSelect.primaryColor),
+                        ),
+                        actions: [
+                          Row(
+                            children: [
+                              Expanded(
+                                  child: SizedBox(
+                                height: 54,
+                                child: ElevatedButton(
+                                    style: ButtonStyle(
+                                        backgroundColor:
+                                            MaterialStatePropertyAll(
+                                                Colors.white),
+                                        shape: MaterialStatePropertyAll(
+                                            RoundedRectangleBorder(
+                                                side: BorderSide(
+                                                    color: Color(0xffF79633)),
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        12)))),
+                                    onPressed: () {},
+                                    child: Text(
+                                      'No'.tr,
+                                      style: TextStyle(
+                                          color: Color(0xffF79633),
+                                          fontFamily: 'inter',
+                                          fontSize: 18),
+                                    )),
+                              )),
+                              SizedBox(
+                                width: 18,
+                              ),
+                              Expanded(
+                                  child: SizedBox(
+                                height: 54,
+                                child: ElevatedButton(
+                                    style: ButtonStyle(
+                                        backgroundColor:
+                                            MaterialStatePropertyAll(
+                                                Color(0xffF79633)),
+                                        shape: MaterialStatePropertyAll(
+                                            RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        12)))),
+                                    onPressed: () {
+                                      // Navigator.push(
+                                      //     context,
+                                      //     MaterialPageRoute(
+                                      //         builder: (context) => PanCardCheck()));
+                                    },
+                                    child: Text(
+                                      'Yes'.tr,
+                                      style: TextStyle(
+                                          fontFamily: 'inter', fontSize: 18),
+                                    )),
+                              ))
+                            ],
+                          ),
+                          // TextButton(
+                          //   onPressed: () {
+                          //     // Close the dialog
+                          //     Navigator.pop(context);
+                          //   },
+                          //   child: Text('Cancel'),
+                          // ),
+                          // TextButton(
+                          //   onPressed: () {
+                          //     // Perform logout logic here
+                          //     // For example, you can clear user session or token
+                          //     // and navigate to the login screen
+                          //     // After that, close the dialog
+                          //     Navigator.pop(context);
+                          //   },
+                          //   child: Text('Logout'),
+                          // ),
+                        ],
+                      ),
+                    );
+                  },
+                );
+              },
               child: Icon(
                 Icons.logout_rounded,
                 size: 32,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:reeroute/Screens/Onboarding%20&%20KYC/gstCheck.dart';
 import 'package:reeroute/Screens/Onboarding%20&%20KYC/kycSuccessfull.dart';
 import 'package:reeroute/common/appBarReeroute.dart';
 
@@ -95,7 +96,7 @@ class _GstSuccessfullyAddedState extends State<GstSuccessfullyAdded> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => KycSuccessfull()));
+                                  builder: (context) => GstCheck()));
                         },
                         child: Text(
                           'Continue'.tr,
